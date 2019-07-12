@@ -1,0 +1,19 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/btn/btn
+
+block variables
+	- const title = "Седона - Форма отзыва"
+	- const page = "feedback"
+
+block content
+	.container
+		include ../../blocks/modules/header/header
+		main.main
+			include ../../blocks/modules/intro/intro
+			include ../../blocks/modules/feedback/feedback
+		include ../../blocks/modules/footer/footer
+block scripts
+	script(src="../js/main.js")
+	script(src="../js/vendor.js")
+	script(src="../js/feedback.js")

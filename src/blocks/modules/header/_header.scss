@@ -1,0 +1,102 @@
+.header {
+    &-show-menu {
+        padding-top: 224px;
+    }
+    &__logo {
+        @include lg-block() {
+            width: 187px;
+            height: 96px;
+            background: url("../img/sprites/logo.svg#logo-desktop") no-repeat center center;
+            background-size: cover;
+        }
+        display: block;
+        position: absolute;
+        z-index: 100;
+        left: 50%;
+        width: 102px;
+        height: 84px;
+        background: url("../img/sprites/logo.svg#logo-mobile") no-repeat center center;
+        background-size: cover;
+        transform: translateX(-50%);
+    }
+    &__menu {
+        position: relative;
+        height: 56px;
+    }
+    &__menu-items {
+        @include md-block() {
+            display: flex !important;
+            flex-direction: row;
+            top: 0;
+            padding: 0 5%;
+        }
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: -224px;
+        left: 0;
+        right: 0;
+        list-style-type: none;
+        line-height: 56px;
+    }
+    &__menu-item {
+        @include md-block() {
+            width: 25%;
+            background: none;
+            box-shadow: none;
+        }
+        text-align: center;
+        background: $accent_color;
+        box-shadow: inset 0 1px 0 0 rgba(1, 1, 1, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+        &--left {
+            @include md(text-align, left);
+        }
+        &--right {
+            @include md(text-align, right);
+        }
+    }
+    &__menu-link {
+        @include md-block() {
+            color: $black_color;
+            font-size: rem($main_fz);
+            &:hover {
+                color: $accent_color;
+            }
+        }
+        color: $white_color;
+        font-size: rem($sm_fz);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: block;
+        transition: .2s;
+    }
+    &__hamburger {
+        @include md(display, none);
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 25px;
+        height: 4px;
+        background: $accent_color;
+        border: 0;
+        padding: 0;
+        outline: none;
+        transform: translateY(-50%);
+        cursor: pointer;
+        &:before, &:after {
+            content: "";
+            display: block;
+            position: relative;
+            width: 25px;
+            height: 4px;
+            background: $accent_color;
+        }
+        &:before {
+            bottom: 9px;
+        }
+        &:after {
+            top: 5px;
+        }
+    }
+}

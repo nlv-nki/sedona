@@ -1,0 +1,59 @@
+form.feedback(action="#" method="post")
+	fieldset.feedback__section
+		legend.feedback__section-heading Представьтесь
+		.feedback__content-container
+			label.feedback__input-label Имя*:
+				span.feedback__input-textbox
+					input#first-name.feedback__input(type="text" placeholder="Петр" minlength="4" maxlength="30" required="required")
+			label.feedback__input-label Фамилия*:
+				span.feedback__input-textbox
+					input#last-name.feedback__input(type="text" placeholder="Иванов" minlength="4" maxlength="30" required="required")
+	fieldset.feedback__section
+		legend.feedback__section-heading Контактная информация
+		.feedback__content-container
+			label.feedback__input-label Телефон*:
+				span.feedback__input-textbox.feedback__input-textbox--phone
+					input#phone.feedback__input(type="tel" placeholder="Введите телефон" required="required")
+			label.feedback__input-label Электронная почта*:
+				span.feedback__input-textbox.feedback__input-textbox--email
+					input.feedback__input(type="email" placeholder="Введите e-mail" required="required")
+	fieldset.feedback__section
+		legend.feedback__section-heading Ваше общее впечатление
+		.feedback__content-container
+			.feedback__option
+				label.feedback__option-container Скорее положительное
+					input.feedback__option-checkbox.feedback__option-checkbox--radio(type="radio" checked="checked" name="emotions")
+					span.feedback__option-checkmark.feedback__option-checkmark--radio
+			.feedback__option
+				label.feedback__option-container Скорее отрицательное
+					input.feedback__option-checkbox.feedback__option-checkbox--radio(type="radio" name="emotions")
+					span.feedback__option-checkmark.feedback__option-checkmark--radio
+			.feedback__option
+				label.feedback__option-container Затрудняюсь ответить
+					input.feedback__option-checkbox.feedback__option-checkbox--radio(type="radio" name="emotions")
+					span.feedback__option-checkmark.feedback__option-checkmark--radio
+	fieldset.feedback__section
+		legend.feedback__section-heading Посещенные достопримечательности
+		.feedback__content-container
+			.feedback__option
+				label.feedback__option-container Мост Дьявола
+					input.feedback__option-checkbox(type="checkbox" checked="checked" name="place")
+					span.feedback__option-checkmark
+			.feedback__option
+				label.feedback__option-container Гора-Колокол
+					input.feedback__option-checkbox(type="checkbox" checked="checked" name="place")
+					span.feedback__option-checkmark
+			.feedback__option
+				label.feedback__option-container Слайд-парк
+					input.feedback__option-checkbox(type="checkbox" checked="checked" name="place")
+					span.feedback__option-checkmark
+			.feedback__option
+				label.feedback__option-container Красные скалы
+					input.feedback__option-checkbox(type="checkbox" name="place")
+					span.feedback__option-checkmark
+	fieldset.feedback__section
+		legend.feedback__section-heading Опишите свои эмоции
+		textarea.feedback__input.feedback__input--overview(aria-label="overview" placeholder="Опишите подробно все свои восторги")
+		.feedback__send
+			button.btn.btn--feedback.feedback__send-btn Отправить
+			p.feedback__send-warn * — обязательные поля

@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6, ul, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: rem($main_fz);
+    color: $lighten_black_color;
+    background: $gray_color;
+}
+
+.container {
+    @include container();
+    background: $white_color;
+    box-shadow: 0 5px 15px 0 rgba($black_color, .2);
+}

@@ -1,0 +1,24 @@
+.btn {
+    @include md-block() {
+        width: 460px;
+    }
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: rem($md_fz);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 60px;
+    margin: 0 auto;
+    transition: .2s;
+    background: $accent_color;
+    &:hover {
+        background: $accent_color_hover;
+    }
+    &--feedback {
+        width: 100%;
+    }
+}

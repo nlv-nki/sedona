@@ -1,0 +1,220 @@
+.features {
+    &__promo {
+        @include md(flex-direction, row);
+        display: flex;
+        flex-direction: column;
+        min-height: 255px;
+        &--reverse {
+            @include md(flex-direction, row-reverse);
+        }
+    }
+    &__promo-text {
+        @include col();
+        @include size(12);
+        @include size-md(4);
+        @include md(min-height, auto);
+        @include lg(padding, 35px 65px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 190px;
+        padding: 35px 5%;
+        color: $white_color;
+        text-align: center;
+        text-transform: uppercase;
+        background: $accent_color;
+        &--decor {
+            @include md-block() {
+                &:before, &:after {
+                    content: none;
+                }
+            }
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -30px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 30px 0 0 50vw;
+                border-color: transparent transparent transparent $accent_color;
+            }
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -30px;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 0 30px 50vw;
+                border-color: transparent transparent $accent_color transparent;
+            }
+        }
+    }
+    &__promo-heading {
+        margin-bottom: 15px;
+        &--white {
+            @include md-block() {
+                @include heading($white_color, rem($md_fz));
+            }
+            @include heading($white_color, rem($sm_fz));
+        }
+    }
+    &__promo-num {
+        @include md(margin-bottom, 30px);
+        display: block;
+        margin-bottom: 15px;
+        &:before {
+            content: "- ";
+        }
+        &:after {
+            content: " -";
+        }
+    }
+    &__promo-img {
+        flex-grow: 1;
+        min-height: 255px;
+        &--city {
+            background: url("../img/advantages/city.webp") center center no-repeat;
+            background-size: cover;
+        }
+        &--bridge {
+            background: url("../img/advantages/bridge.webp") center center no-repeat;
+            background-size: cover;
+        }
+    }
+    &__items {
+        @include md-block() {
+            flex-direction: row;
+            padding: 60px 0;
+        }
+        display: flex;
+        flex-direction: column;
+        &--main {
+            align-items: center;
+            padding: 40px 5%;
+        }
+        &--other {
+            @include md-block() {
+                min-height: 255px;
+                padding: 0;
+            }
+            background: darken($gray_color, 5%);
+        }
+    }
+    &__item {
+        @include col();
+        @include size-md(4);
+        @include md-block() {
+            flex-direction: column;
+            align-items: center;
+            min-width: auto;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 40px;
+        text-align: left;
+        text-transform: uppercase;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &--other {
+            @include col();
+            @include size(12);
+            @include size-md(4);
+            @include md-block() {
+                min-height: auto;
+                padding: 35px 5%;
+                &:after {
+                    content: none;
+                }
+            }
+            @include lg(padding, 35px 65px);
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 170px;
+            padding: 35px 5%;
+            text-align: center;
+            margin-bottom: 0;
+            color: $black_color;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                min-width: 280px;
+                max-width: 750px;
+                height: 1px;
+                margin: 0 auto;
+                background: rgba($black_color, .1);
+            }
+            &:last-child:after {
+                content: none;
+            }
+        }
+        &--main {
+            width: 100%;
+            min-width: 300px;
+            max-width: 500px;
+        }
+    }
+    &__item-img {
+        @include md-block() {
+            height: 75px;
+            margin-bottom: 30px;
+        }
+        width: auto;
+        height: 35px;
+        margin: 0;
+    }
+    &__item-caption {
+        @include md-block() {
+            width: 165px;
+            margin: 0;
+        }
+        @include lg(width, 280px);
+        margin-left: 15px;
+    }
+    &__item-heading {
+        @include md-block() {
+            @include heading($black_color, rem($md_fz));
+        }
+        @include heading($black_color, rem($sm_fz));
+        margin-bottom: 15px;
+    }
+    &__item-num {
+        @include md(margin-bottom, 30px);
+        display: block;
+        margin-bottom: 15px;
+        &:before {
+            content: "- ";
+        }
+        &:after {
+            content: " -";
+        }
+    }
+}
+
+.no-webp {
+    &.features__promo-img {
+        &--city {
+            background: url("../img/advantages/city.jpg") center center no-repeat;
+            background-size: cover;
+        }
+
+        &--bridge {
+            background: url("../img/advantages/bridge.jpg") center center no-repeat;
+            background-size: cover;
+        }
+    }
+}

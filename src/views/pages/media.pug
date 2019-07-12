@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Седона - Фото и видео";
+	- const page = "media"
+
+block content
+	.container
+		include ../../blocks/modules/header/header
+		main.main
+			include ../../blocks/modules/intro/intro
+			include ../../blocks/modules/gallery/gallery
+			include ../../blocks/modules/presentation/presentation
+		include ../../blocks/modules/footer/footer
+block scripts
+	script(src="../js/main.js")

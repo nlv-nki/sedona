@@ -1,0 +1,40 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/components/btn/btn
+
+block variables
+	- const title = "Седона - Главная"
+	- const page = "index"
+
+block links
+
+block content
+	.container
+		include ../blocks/modules/header/header
+		main.main
+			include ../blocks/modules/intro/intro
+			include ../blocks/modules/features/features
+			include ../blocks/modules/map/map
+		include ../blocks/modules/footer/footer
+block scripts
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=fe0f2a48-ac01-43fd-980e-4825f30544ee&lang=ru_RU")
+	script.
+		ymaps.ready(function() {
+			const myMap = new ymaps.Map("map", {
+				center: [34.869497, -111.760186],
+				zoom: 12
+			}, { searchControlProvider: "yandex#search" }
+			),
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+				hintContent: "",
+				balloonContent: ""
+			},
+			{
+				iconLayout: "default#image",
+				iconImageHref: "../img/map/map-marker.svg",
+				iconImageSize: [35, 35],
+				iconImageOffset: [-20, -5]
+			});
+			myMap.geoObjects.add(myPlacemark);
+		});
+	script(src="../js/main.js")

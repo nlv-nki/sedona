@@ -1,0 +1,55 @@
+"use strict";
+
+import { paths } from "../gulpfile.babel";
+import gulp from "gulp";
+import svg from "gulp-svg-sprite";
+import debug from "gulp-debug";
+import browsersync from "browser-sync";
+
+gulp.task("sprites_logo", () => {
+    return gulp.src(paths.sprites_logo.src)
+        .pipe(svg({
+            mode: {
+                stack: {
+                    sprite: "../logo.svg"
+                }
+            }
+        }))
+        .pipe(gulp.dest(paths.sprites_logo.dist))
+        .pipe(debug({
+            "title": "Sprites"
+        }))
+        .on("end", browsersync.reload);
+});
+
+gulp.task("sprites_form", () => {
+    return gulp.src(paths.sprites_form.src)
+        .pipe(svg({
+            mode: {
+                stack: {
+                    sprite: "../form.svg"
+                }
+            }
+        }))
+        .pipe(gulp.dest(paths.sprites_form.dist))
+        .pipe(debug({
+            "title": "Sprites"
+        }))
+        .on("end", browsersync.reload);
+});
+
+gulp.task("sprites", () => {
+    return gulp.src(paths.sprites.src)
+        .pipe(svg({
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg"
+                }
+            }
+        }))
+        .pipe(gulp.dest(paths.sprites.dist))
+        .pipe(debug({
+            "title": "Sprites"
+        }))
+        .on("end", browsersync.reload);
+});
