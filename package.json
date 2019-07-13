@@ -1,10 +1,10 @@
 {
-    "name": "gulp-pug-starter",
-    "description": "Frontend development with pleasure",
+    "name": "Sedona",
+    "description": "Practice",
     "author": "Andrey Gorokhov",
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreyalexeich/gulp-pug-starter.git"
+        "url": "https://github.com/andreyalexeich/sedona.git"
     },
     "license": "MIT",
     "scripts": {
