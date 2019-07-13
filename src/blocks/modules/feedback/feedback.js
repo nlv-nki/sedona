@@ -2,13 +2,13 @@ import IMask from "imask";
 
 const firstNameMask = IMask(
     document.getElementById("first-name"), {
-        mask: /^[A-Za-z]+$/
+        mask: /^[A-Za-zА-Яа-я]+$/
     }
 );
 
 const lastNameMask = IMask(
     document.getElementById("last-name"), {
-        mask: /^[A-Za-z]+$/
+        mask: /^[A-Za-zА-Яа-я]+$/
     }
 );
 
