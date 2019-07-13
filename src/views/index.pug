@@ -17,13 +17,18 @@ block content
 			include ../blocks/modules/map/map
 		include ../blocks/modules/footer/footer
 block scripts
-	script(src="https://api-maps.yandex.ru/2.1/?apikey=fe0f2a48-ac01-43fd-980e-4825f30544ee&lang=ru_RU")
 	script.
-		ymaps.ready(function() {
+		setTimeout(function () {
+			var elem = document.createElement("script");
+			elem.src = "//api-maps.yandex.ru/2.1/?load=package.standard&apikey=fe0f2a48-ac01-43fd-980e-4825f30544ee&lang=ru-RU&onload=getYaMap";
+			document.getElementsByTagName("body")[0].appendChild(elem);
+		}, 2000);
+
+		function getYaMap() {
 			const myMap = new ymaps.Map("map", {
 				center: [34.869497, -111.760186],
 				zoom: 12
-			}, { searchControlProvider: "yandex#search" }
+			}, {searchControlProvider: "yandex#search"}
 			),
 			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
 				hintContent: "",
@@ -36,5 +41,5 @@ block scripts
 				iconImageOffset: [-20, -5]
 			});
 			myMap.geoObjects.add(myPlacemark);
-		});
+		}
 	script(src="../js/main.js")
